@@ -1,0 +1,5 @@
+Base de datos de Criminalidad en Chicago (2018)
+
+1. ¿Qué tipos de delitos conllevan a más arrestos?
+2. ¿En qué distritos suceden más delitos?
+3. ¿Qué tipo de delito es el más común cada mes?
