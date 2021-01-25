@@ -24,7 +24,6 @@ class PCA(object):
                                                                    feed_dict={X: self.data})
 
         normalized_singular_values = self.singular_values / sum(self.singular_values)
-        print(normalized_singular_values)
         ladder = numpy.cumsum(normalized_singular_values)
         n_dimensions = next(idx for idx, value in enumerate(ladder) if value >= percentage_variability_explained) + 1
 

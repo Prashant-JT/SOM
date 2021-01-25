@@ -24,4 +24,4 @@ def process_data(path):
             values_dict[col] = d
             df[col] = df[col].map(d)
 
-    return df.astype(dtype='float64'), values_dict
+    return df.astype(dtype='float32'), values_dict
