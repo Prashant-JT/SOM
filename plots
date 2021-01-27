@@ -1,0 +1,27 @@
+def plot_data():
+    df, dict_ = process_data(path)
+
+    # Tipos de delitos con mas arrestos
+    groups = df.groupby(['Primary Type', 'Arrest']).size().unstack()
+    # print(df.groupby(['Primary Type', 'Arrest']).size())
+    groups.plot.bar(legend=True, stacked=True)
+    primary_type_dict = list(dict_['Primary Type'])
+    plt.xlabel('Tipos de delitos')
+    plt.ylabel('Número total')
+    
+    groups = df.groupby(['District', 'Primary Type']).size().unstack()
+    print(df.groupby(['District', 'Primary Type']).size())
+    groups.plot.barh(legend=False, stacked=True)
+    plt.xlabel('Número total de delitos')
+    plt.ylabel('Distritos')
+
+    # Delitos cada mes
+    groups = df.groupby(['MONTH', 'Primary Type']).size().unstack()
+
+    for index, value in groups.items():
+        print(f"Index : {index}, Value : {value}")
+
+    groups.plot.bar(legend=False, stacked=True)
+    primary_type_dict = list(dict_['Primary Type'])
+    plt.xlabel('Mes')
+    plt.ylabel('Tipos de delitos')
